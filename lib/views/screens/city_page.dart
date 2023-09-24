@@ -159,6 +159,24 @@ class _City_pageState extends State<City_page> {
               ],
             ),
           ),
+         Padding(
+           padding: const EdgeInsets.all(8),
+           child: Row(
+             children: [
+               Text(
+                    'ALL CITIES',
+                    style: TextStyle(
+                      color: Color(0xFFCD0000),
+                      fontSize: 18,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w600,
+                      height: 0,
+                    ),
+                  ),
+             ],
+           ),
+         ),
+
         ],
       ),
     );
