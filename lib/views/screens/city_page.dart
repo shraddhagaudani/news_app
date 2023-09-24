@@ -61,11 +61,9 @@ class _City_pageState extends State<City_page> {
             alignment: Alignment.center,
             width: 358,
             height: 43,
-            decoration: ShapeDecoration(
-              color: Color(0xFFD9D9D9),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
+            decoration: BoxDecoration(
+              color: const Color(0xFFD9D9D9),
+              borderRadius: BorderRadius.circular(15),
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
