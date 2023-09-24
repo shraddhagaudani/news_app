@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/utills.dart';
 
@@ -12,14 +13,14 @@ class _City_pageState extends State<City_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
               children: [
                 IconButton(
                   onPressed: () {},
@@ -53,46 +54,46 @@ class _City_pageState extends State<City_page> {
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Container(
-            alignment: Alignment.center,
-            width: 358,
-            height: 43,
-            decoration: BoxDecoration(
-              color: const Color(0xFFD9D9D9),
-              borderRadius: BorderRadius.circular(15),
+            const SizedBox(
+              height: 10,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.search),
-                  ),
-                  const SizedBox(
-                    width: 3,
-                  ),
-                  const Text(
-                    'Search City',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w500,
-                      height: 0,
+            Container(
+              alignment: Alignment.center,
+              width: 358,
+              height: 43,
+              decoration: BoxDecoration(
+                color: const Color(0xFFD9D9D9),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.search),
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      width: 3,
+                    ),
+                    const Text(
+                      'Search City',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(16),
-            child: Row(
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
               children: [
                 Text(
                   'POPULAR CITIES',
@@ -106,13 +107,10 @@ class _City_pageState extends State<City_page> {
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
               children: [
                 Container(
                   width: 70,
@@ -125,7 +123,7 @@ class _City_pageState extends State<City_page> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 65,
                 ),
                 Container(
@@ -139,7 +137,7 @@ class _City_pageState extends State<City_page> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 65,
                 ),
                 Container(
@@ -158,26 +156,257 @@ class _City_pageState extends State<City_page> {
                 ),
               ],
             ),
-          ),
-         Padding(
-           padding: const EdgeInsets.all(8),
-           child: Row(
-             children: [
-               Text(
-                    'ALL CITIES',
-                    style: TextStyle(
-                      color: Color(0xFFCD0000),
-                      fontSize: 18,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w600,
-                      height: 0,
-                    ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Text(
+                  'ALL CITIES',
+                  style: TextStyle(
+                    color: Color(0xFFCD0000),
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w600,
+                    height: 0,
                   ),
-             ],
-           ),
-         ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Agartala',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Agra',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Alahabad',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Ajmer',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Amaravati',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Amritsar',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Aurangabad',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Agartala',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Bareli',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Bandra',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Icon(CupertinoIcons.circle),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Bhavnagar',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
+              ],
+            ),
 
-        ],
+          ],
+        ),
       ),
     );
   }
