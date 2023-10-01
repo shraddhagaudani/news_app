@@ -25,7 +25,7 @@ class _Business_pageState extends State<Business_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Business Page"),
+        title: const Text("Business Page"),
       ),
       body: FutureBuilder(
           future: getbussinessnews,
