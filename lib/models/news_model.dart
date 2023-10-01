@@ -1,28 +1,31 @@
 class NewsModel {
-  String title;
-  String description;
-  String imageUrl;
-  String content;
-  String? author;
-  String? publishedat;
+  // String title;
+  // String description;
+  // String imageUrl;
+  // String content;
+  // String? author;
+  // String? publishedat;
+  List articles;
 
   NewsModel({
-    required this.title,
-    required this.description,
-    required this.imageUrl,
-    required this.content,
-    this.author,
-    this.publishedat,
+    // required this.title,
+    // required this.description,
+    // required this.imageUrl,
+    // required this.content,
+    // this.author,
+    // this.publishedat,
+required this.articles
   });
 
   factory NewsModel.fromMap({required Map data}) {
     return NewsModel(
-      title: data['articles'][0]['title'],
-      description: data['articles'][0]['description'],
-      imageUrl: data['articles'][0]['urlToImage'],
-      content: data['articles'][0]['content'],
-      author: data['articles'][0]['author'],
-      publishedat: data['articles'][0]['publishedAt'],
+      // title: data['title'],
+      // description: data['description'],
+      // imageUrl: data['urlToImage'],
+      // content: data['articles'][0]['content'],
+      // author: data['articles'][0]['author'],
+      // publishedat: data['articles'][0]['publishedAt'],
+      articles: data['articles']
     );
   }
 }

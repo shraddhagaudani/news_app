@@ -19,7 +19,13 @@ class APIHelper {
 
       Map decodedData = jsonDecode(data);
 
-      NewsModel allnews = NewsModel.fromMap(data: decodedData);
+      // List allNewsData = decodedData['articles'];
+      //
+      // List<NewsModel> allnews =
+      //     allNewsData.map((e) => NewsModel.fromMap(data: e)).toList();
+
+      //for map
+;      NewsModel allnews = NewsModel.fromMap(data: decodedData);
 
       return allnews;
     }
