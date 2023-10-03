@@ -24,7 +24,7 @@ class _Sports_pageState extends State<Sports_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Sports Page"),),
+      appBar: AppBar(title: const Text("Sports News"),),
       body: FutureBuilder(
           future: getsportsnews,
           builder: (context, snapshot) {
@@ -64,7 +64,7 @@ class _Sports_pageState extends State<Sports_page> {
                             (data.articles[i]['description'] != null)
                                 ? Text(data.articles[i]['description'])
                                 : const Text(
-                              "Business information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
+                              "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
                               style: TextStyle(color: Colors.grey),
                             ),
                             const SizedBox(

@@ -28,11 +28,11 @@ class _Home_pageState extends State<Home_page> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Expanded(
-           flex: 2,
+              flex: 2,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -63,36 +63,37 @@ class _Home_pageState extends State<Home_page> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-
                       children: [
                         OutlinedButton(
                           onPressed: () {
                             Get.toNamed('/business_page');
                           },
-                          child: Text("Business"),
+                          child: const Text("Business"),
                         ),
-                        SizedBox(width: 20,),
+                        const SizedBox(
+                          width: 20,
+                        ),
                         OutlinedButton(
                           onPressed: () {
                             Get.toNamed('/health_page');
                           },
-                          child: Text("Health"),
+                          child: const Text("Health"),
                         ),
-                        SizedBox(width: 20,),
-
+                        const SizedBox(
+                          width: 20,
+                        ),
                         OutlinedButton(
                           onPressed: () {
                             Get.toNamed('/sports_page');
                           },
-                          child: Text("Sports"),
+                          child: const Text("Sports"),
                         ),
-
                       ],
                     ),
                   )
@@ -133,20 +134,30 @@ class _Home_pageState extends State<Home_page> {
                                       style: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w800,
-                                        fontSize: 22,
+                                        fontSize: 20,
                                         fontFamily: 'Inter',
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  (data.articles[i]['description'] != null)
-                                      ? Text(data.articles[i]['description'])
-                                      : const Text(
-                                          "Business information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
-                                          style: TextStyle(color: Colors.grey),
-                                        ),
+                                  // Text(data.articles[i]['source']['name']),
+                                  // (data.articles[i]['description'] != null)
+                                  //     ? Text(
+                                  //         data.articles[i]['description'],
+                                  //         style: const TextStyle(
+                                  //           fontSize: 15,
+                                  //
+                                  //
+                                  //           fontFamily: 'Inter',
+                                  //         ),
+                                  //       )
+                                  //     : const Text(
+                                  //         "Business information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
+                                  //         style: TextStyle(
+                                  //           fontSize: 15,
+                                  //
+                                  //           fontFamily: 'Inter',
+                                  //         ),
+                                  //       ),
                                   const SizedBox(
                                     height: 20,
                                   ),
@@ -155,6 +166,7 @@ class _Home_pageState extends State<Home_page> {
                                       : Image.network(
                                           data.articles[i]['urlToImage'],
                                         ),
+                                  SizedBox(height: 20,),
                                 ],
                               ),
                             );
