@@ -13,18 +13,20 @@ class Sports_page extends StatefulWidget {
 }
 
 class _Sports_pageState extends State<Sports_page> {
-
-  late Future<NewsModel?> getsportsnews ;
+  late Future<NewsModel?> getsportsnews;
 
   @override
   void initState() {
     getsportsnews = APIHelper.apiHelper.fetchAllNews(Category: "sports");
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Sports News"),),
+      appBar: AppBar(
+        title: const Text("Sports News"),
+      ),
       body: FutureBuilder(
           future: getsportsnews,
           builder: (context, snapshot) {
@@ -34,13 +36,17 @@ class _Sports_pageState extends State<Sports_page> {
               NewsModel? data = snapshot.data;
 
               if (data == null) {
-                return const Text("No Available data...");
+                return const Text(
+                  "No Available data...",
+                );
               } else {
                 return ListView.builder(
                     itemCount: data.articles.length,
                     itemBuilder: (context, i) {
                       return Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(
+                          16,
+                        ),
                         child: Column(
                           children: [
                             GestureDetector(
@@ -64,17 +70,17 @@ class _Sports_pageState extends State<Sports_page> {
                             (data.articles[i]['description'] != null)
                                 ? Text(data.articles[i]['description'])
                                 : const Text(
-                              "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
-                              style: TextStyle(color: Colors.grey),
-                            ),
+                                    "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                             const SizedBox(
                               height: 20,
                             ),
                             (data.articles[i]['urlToImage'] == null)
                                 ? Image.asset("assets/images/news.png")
                                 : Image.network(
-                              data.articles[i]['urlToImage'],
-                            ),
+                                    data.articles[i]['urlToImage'],
+                                  ),
                           ],
                         ),
                       );

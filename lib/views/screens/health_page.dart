@@ -26,71 +26,66 @@ class _Health_pageState extends State<Health_page> {
       appBar: AppBar(
         title: const Text("Health News"),
       ),
-      body: Column(
-        children: [
-          FutureBuilder(
-              future: gethealthnews,
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return Text("ERROR:${snapshot.error}");
-                } else if (snapshot.hasData) {
-                  NewsModel? data = snapshot.data;
+      body: FutureBuilder(
+          future: gethealthnews,
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Text("ERROR:${snapshot.error}");
+            } else if (snapshot.hasData) {
+              NewsModel? data = snapshot.data;
 
-                  if (data == null) {
-                    return const Text("No Available data...");
-                  } else {
-                    return ListView.builder(
-                        itemCount: data.articles.length,
-                        itemBuilder: (context, i) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Padding(
-                              padding: const EdgeInsets.all(16),
-                              child: Column(
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      Get.toNamed('/details_page',
-                                          arguments: data.articles[i]);
-                                    },
-                                    child: Text(
-                                      data.articles[i]['title'],
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w800,
-                                        fontSize: 22,
-                                        fontFamily: 'Inter',
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  (data.articles[i]['description'] != null)
-                                      ? Text(data.articles[i]['description'])
-                                      : const Text(
-                                          "Health information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
-                                          style: TextStyle(color: Colors.grey),
-                                        ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  (data.articles[i]['urlToImage'] == null)
-                                      ? Image.asset("assets/images/news.png")
-                                      : Image.network(
-                                          data.articles[i]['urlToImage'],
-                                        ),
-                                ],
+              if (data == null) {
+                return const Text(
+                  "No Available data...",
+                );
+              } else {
+                return ListView.builder(
+                    itemCount: data.articles.length,
+                    itemBuilder: (context, i) {
+                      return Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Get.toNamed('/details_page',
+                                    arguments: data.articles[i]);
+                              },
+                              child: Text(
+                                data.articles[i]['title'],
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 22,
+                                  fontFamily: 'Inter',
+                                ),
                               ),
                             ),
-                          );
-                        });
-                  }
-                }
-                return const Center(child: CircularProgressIndicator());
-              }),
-        ],
-      ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            (data.articles[i]['description'] != null)
+                                ? Text(data.articles[i]['description'])
+                                : const Text(
+                              "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            (data.articles[i]['urlToImage'] == null)
+                                ? Image.asset("assets/images/news.png")
+                                : Image.network(
+                              data.articles[i]['urlToImage'],
+                            ),
+                          ],
+                        ),
+                      );
+                    });
+              }
+            }
+            return const Center(child: CircularProgressIndicator());
+          }),
     );
   }
 }
