@@ -16,7 +16,7 @@ class _Home_pageState extends State<Home_page> {
 
   @override
   void initState() {
-    getnews = APIHelper.apiHelper.fetchAllNews(Category: "");
+    getnews = APIHelper.apiHelper.fetchAllNews(NewsCategory: "");
 
     super.initState();
   }
@@ -24,6 +24,7 @@ class _Home_pageState extends State<Home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -40,7 +41,7 @@ class _Home_pageState extends State<Home_page> {
                     children: [
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.list),
+                        icon: const Icon(Icons.list),
                       ),
                       // SizedBox(width: 10,),
                       const Text(
@@ -63,9 +64,10 @@ class _Home_pageState extends State<Home_page> {
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  // const SizedBox(
+                  //   height: 10,
+                  // ),
+
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -96,8 +98,25 @@ class _Home_pageState extends State<Home_page> {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: TextFormField(
+                onChanged: (val) {
+                  setState(() {
+                    getnews = APIHelper.apiHelper.fetchAllNews(
+                      NewsCategory: val,
+                    );
+                  });
+                },
+                decoration: const InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  hintText: "Enter News Category",
+                  border: UnderlineInputBorder(),
+                ),
               ),
             ),
             Expanded(
@@ -114,7 +133,7 @@ class _Home_pageState extends State<Home_page> {
                     print(data);
                     if (data == null) {
                       return const Center(
-                        child: Text("No available data ..."),
+                        child: Text("No available data..."),
                       );
                     } else {
                       return ListView.builder(
@@ -166,7 +185,9 @@ class _Home_pageState extends State<Home_page> {
                                       : Image.network(
                                           data.articles[i]['urlToImage'],
                                         ),
-                                  SizedBox(height: 20,),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
                                 ],
                               ),
                             );

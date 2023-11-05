@@ -17,7 +17,7 @@ class _Sports_pageState extends State<Sports_page> {
 
   @override
   void initState() {
-    getsportsnews = APIHelper.apiHelper.fetchAllNews(Category: "sports");
+    getsportsnews = APIHelper.apiHelper.fetchAllNews(NewsCategory: "sports");
     super.initState();
   }
 
@@ -67,15 +67,15 @@ class _Sports_pageState extends State<Sports_page> {
                             const SizedBox(
                               height: 20,
                             ),
-                            (data.articles[i]['description'] != null)
-                                ? Text(data.articles[i]['description'])
-                                : const Text(
-                                    "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
-                                    style: TextStyle(color: Colors.grey),
-                                  ),
-                            const SizedBox(
-                              height: 20,
-                            ),
+                            // (data.articles[i]['description'] != null)
+                            //     ? Text(data.articles[i]['description'])
+                            //     : const Text(
+                            //         "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
+                            //         style: TextStyle(color: Colors.grey),
+                            //       ),
+                            // const SizedBox(
+                            //   height: 20,
+                            // ),
                             (data.articles[i]['urlToImage'] == null)
                                 ? Image.asset("assets/images/news.png")
                                 : Image.network(

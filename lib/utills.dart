@@ -1,3 +1,4 @@
+import 'package:get_storage/get_storage.dart';
 // newsapi
 // https://newsapi.org/v2/everything?q=tesla&from=2023-08-24&sortBy=publishedAt&apiKey=5364b448d6ea422eb32e4f2ff910a2d8
 
@@ -6,5 +7,7 @@
 
 //india news api:
 //https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=5364b448d6ea422eb32e4f2ff910a2d8
-
 String imagepath =  "assets/cityimages/";
+
+
+final box = GetStorage();

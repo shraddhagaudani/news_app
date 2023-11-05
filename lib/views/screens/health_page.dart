@@ -16,7 +16,7 @@ class _Health_pageState extends State<Health_page> {
 
   @override
   void initState() {
-    gethealthnews = APIHelper.apiHelper.fetchAllNews(Category: "health");
+    gethealthnews = APIHelper.apiHelper.fetchAllNews(NewsCategory: "health");
     super.initState();
   }
 
@@ -64,15 +64,15 @@ class _Health_pageState extends State<Health_page> {
                             const SizedBox(
                               height: 20,
                             ),
-                            (data.articles[i]['description'] != null)
-                                ? Text(data.articles[i]['description'])
-                                : const Text(
-                              "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
+                            // (data.articles[i]['description'] != null)
+                            //     ? Text(data.articles[i]['description'])
+                            //     : const Text(
+                            //   "Sports information comes in general surveys, data, articles, books, references, search-engines, and internal records that a business can use to guide its planning, operations, and the evaluation of its activities.",
+                            //   style: TextStyle(color: Colors.grey),
+                            // ),
+                            // const SizedBox(
+                            //   height: 20,
+                            // ),
                             (data.articles[i]['urlToImage'] == null)
                                 ? Image.asset("assets/images/news.png")
                                 : Image.network(

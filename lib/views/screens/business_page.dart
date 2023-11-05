@@ -17,7 +17,7 @@ class _Business_pageState extends State<Business_page> {
 
   @override
   void initState() {
-    getbussinessnews = APIHelper.apiHelper.fetchAllNews(Category: "business");
+    getbussinessnews = APIHelper.apiHelper.fetchAllNews(NewsCategory: "business");
     super.initState();
   }
 
