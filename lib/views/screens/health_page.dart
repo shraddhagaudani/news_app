@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:news_app/controllers/theme_controller.dart';
 import 'package:news_app/helper/api_helper.dart';
 import 'package:news_app/models/news_model.dart';
 
@@ -22,6 +23,7 @@ class _Health_pageState extends State<Health_page> {
 
   @override
   Widget build(BuildContext context) {
+   ThemeController themeController = Get.put(ThemeController());
     return Scaffold(
       appBar: AppBar(
         title: const Text("Health News"),
@@ -53,8 +55,8 @@ class _Health_pageState extends State<Health_page> {
                               },
                               child: Text(
                                 data.articles[i]['title'],
-                                style: const TextStyle(
-                                  color: Colors.black,
+                                style:  TextStyle(
+                                  color:(themeController.themeModel.isdark)?Colors.white:Colors.black,
                                   fontWeight: FontWeight.w800,
                                   fontSize: 22,
                                   fontFamily: 'Inter',

@@ -21,7 +21,6 @@ class APIHelper {
 
       // List allNewsData = decodedData['articles'];
 
-
       //List of json data(start list)
 
       // List<NewsModel> allnews =

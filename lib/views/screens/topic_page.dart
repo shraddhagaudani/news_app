@@ -68,7 +68,7 @@ class _Topic_pageState extends State<Topic_page> {
               const Row(
                 children: [
                   Text(
-                    'Choose the topics that intrest you the most.',
+                    'Choose the topics that interest you the most.',
                     style: TextStyle(
                       color: Color(0xFF868484),
                       fontSize: 17,
@@ -351,6 +351,7 @@ class _Topic_pageState extends State<Topic_page> {
                         BoxShadow(
                           color: Color(0x3F000000),
                           blurRadius: 4,
+
                           offset: Offset(0, 4),
                           spreadRadius: 0,
                         ),

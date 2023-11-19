@@ -16,7 +16,7 @@ class _Setting_pageState extends State<Setting_page> {
     ThemeController themeController = Get.put(ThemeController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Setting"),
+        title: const Text("Setting Page"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -33,10 +33,10 @@ class _Setting_pageState extends State<Setting_page> {
                     },
                     icon: (themeController.themeModel.isdark)
                         ? const Icon(
-                            Icons.nightlight,
+                            Icons.sunny,
                           )
                         : const Icon(
-                            Icons.sunny,
+                            Icons.nightlight,
                           ),
                   ),
                 );

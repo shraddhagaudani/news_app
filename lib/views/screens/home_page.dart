@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:news_app/controllers/theme_controller.dart';
 import 'package:news_app/helper/api_helper.dart';
 import 'package:news_app/models/news_model.dart';
 
@@ -23,7 +24,9 @@ class _Home_pageState extends State<Home_page> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+ ThemeController themeController =   Get.find();
+    return GetBuilder<ThemeController>(
+    builder: (_){return  Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -40,14 +43,16 @@ class _Home_pageState extends State<Home_page> {
                   Row(
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed('/setting_page');
+                        },
                         icon: const Icon(Icons.list),
                       ),
                       // SizedBox(width: 10,),
-                      const Text(
+                      Text(
                         'THE TIMES OF INDIA',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: (themeController.themeModel.isdark)?Colors.white:Colors.black,
                           fontSize: 22,
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.w700,
@@ -150,8 +155,8 @@ class _Home_pageState extends State<Home_page> {
                                     },
                                     child: Text(
                                       data.articles[i]['title'],
-                                      style: const TextStyle(
-                                        color: Colors.black,
+                                      style:  TextStyle(
+                                        color: (themeController.themeModel.isdark)?Colors.white:Colors.black,
                                         fontWeight: FontWeight.w800,
                                         fontSize: 20,
                                         fontFamily: 'Inter',
@@ -176,15 +181,15 @@ class _Home_pageState extends State<Home_page> {
                                   //
                                   //           fontFamily: 'Inter',
                                   //         ),
-                                  //       ),
+                                  //       )
                                   const SizedBox(
                                     height: 20,
                                   ),
                                   (data.articles[i]['urlToImage'] == null)
                                       ? Image.asset("assets/images/news.png")
                                       : Image.network(
-                                          data.articles[i]['urlToImage'],
-                                        ),
+                                    data.articles[i]['urlToImage'],
+                                  ),
                                   SizedBox(
                                     height: 20,
                                   ),
@@ -204,6 +209,7 @@ class _Home_pageState extends State<Home_page> {
           ],
         ),
       ),
+    );},
     );
   }
 }

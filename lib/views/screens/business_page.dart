@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:news_app/controllers/theme_controller.dart';
 import 'package:news_app/helper/api_helper.dart';
 
 import '../../models/news_model.dart';
@@ -23,6 +24,7 @@ class _Business_pageState extends State<Business_page> {
 
   @override
   Widget build(BuildContext context) {
+   ThemeController themeController = Get.find();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Business Page"),
@@ -54,8 +56,8 @@ class _Business_pageState extends State<Business_page> {
                                 },
                                 child: Text(
                                   data.articles[i]['title'],
-                                  style: const TextStyle(
-                                    color: Colors.black,
+                                  style:  TextStyle(
+                                    color:(themeController.themeModel.isdark)?Colors.white:Colors.black,
                                     fontWeight: FontWeight.w800,
                                     fontSize: 20,
                                     fontFamily: 'Inter',

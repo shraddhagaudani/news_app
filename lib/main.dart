@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:news_app/controllers/theme_controller.dart';
 import 'package:news_app/views/screens/business_page.dart';
 import 'package:news_app/views/screens/city_page.dart';
 import 'package:news_app/views/screens/details_page.dart';
@@ -16,11 +17,15 @@ import 'package:get_storage/get_storage.dart';
 void main() async {
   await GetStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
+
+  ThemeController themeController = Get.put(ThemeController());
   runApp(
     GetMaterialApp(
       initialRoute: '/',
-      theme: ThemeData.light(useMaterial3: true),
-      darkTheme: ThemeData.dark(useMaterial3: true),
+      theme: (themeController.themeModel.isdark)
+          ? ThemeData.dark(useMaterial3: true)
+          : ThemeData.light(useMaterial3: true),
+      // darkTheme: ThemeData.dark(useMaterial3: true),
       debugShowCheckedModeBanner: false,
       getPages: [
         GetPage(name: '/', page: () => const Home_page()),

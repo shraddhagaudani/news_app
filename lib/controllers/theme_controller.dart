@@ -11,9 +11,9 @@ class ThemeController extends GetxController {
     box.write('isDarkMode', themeModel.isdark = !themeModel.isdark);
     (themeModel.isdark)
         ? Get.changeTheme(
-            ThemeData(useMaterial3: true, brightness: Brightness.light))
+            ThemeData.dark(useMaterial3: true))
         : Get.changeTheme(
-            ThemeData(useMaterial3: true, brightness: Brightness.dark));
+            ThemeData.light(useMaterial3: true));
     update();
   }
 }
